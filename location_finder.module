@@ -1,0 +1,3 @@
+<?php
+define('API_URL', 'https://api-sandbox.dhl.com/location-finder/v1/find-by-address');
+define('DHL_API_KEY', 'demo-key');

@@ -1,0 +1,8 @@
+location_finder.form:
+  path: '/locations-details'
+  defaults:
+    _form:  '\Drupal\location_finder\Form\DHLLocationFinderController'
+    _title: 'Location Details Form'
+  requirements:
+    _permission: 'access content'
+    _access: 'TRUE'
