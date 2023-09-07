@@ -6,3 +6,10 @@ location_finder.form:
   requirements:
     _permission: 'access content'
     _access: 'TRUE'
+location_finder.display_location:
+  path: '/display-location'
+  defaults:
+    _controller: '\Drupal\location_finder\Controller\LocationDisplayController::locations'
+    _title: 'Available Locations'
+  requirements:
+    _permission: 'access content'

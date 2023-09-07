@@ -9,7 +9,6 @@ namespace Drupal\location_finder\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
-use Symfony\Component\Yaml\Yaml;
 
 /**
  * Management of the DHL Location Finder form.
@@ -108,12 +107,8 @@ class DHLLocationFinderController extends FormBase {
                     $new_location[] = $location;
                 } 
             }
-
-            $yamlData = Yaml::dump($new_location);
-            echo '<pre>';
-            echo $yamlData;
-            echo '</pre>';
-            die();
+            \Drupal::service('session')->set('locations', $new_location);
+            $form_state->setRedirect('location_finder.display_location');
        }
     }
 
@@ -128,7 +123,7 @@ class DHLLocationFinderController extends FormBase {
 	 */
     public function fetch_locations( $country, $city, $postal_code ) {
         $data = '';
-          // Define the API endpoint URL
+        // Define the API endpoint URL
         $api_url = API_URL.'?countryCode='.$country.'&postalCode='.$postal_code.'&addressLocality='.$city;
 
         // Set up authentication if required

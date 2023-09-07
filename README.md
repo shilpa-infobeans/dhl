@@ -11,7 +11,8 @@ This Drupal module is used to find DHL office locations.
     "Clear all caches".
   * The next step is to activate or install our custom module by going to "Extend" and finding "Location Finder API Page" Click on the checkbox and then scroll 
     down to the bottom and install the module by clicking the "Install" button.
-  * To run this module in the browser and add this endpoint to your site URL like *http://your_site_domain/locations-deatils*.
+  * To run this module in the browser and add this endpoint to your site URL like *http://your_site_domain/locations-details*.
   * The module should provide a form for entering the country, city, and postal code. For example Czechia, Prague, 11000.
   * After submitting the form, a list of locations should be displayed who are working on weekends as well as those that have an odd number in their address
-  * Each location should be output in yaml format.
+  * Each location should be output in yaml format in other page that is /display-location.
+  * "DHL_API_KEY" and "API_URL" Constant vaiables and it's value defined in location_finder.module file.
